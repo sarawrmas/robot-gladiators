@@ -29,6 +29,7 @@ var fightOrSkip = function() {
             return true;
         }
     }
+    return false;
 }
 
 // fight() function
@@ -58,7 +59,7 @@ var fight = function(enemy) {
             );
 
             // check enemy's health
-            if (enemy.health <=0) {
+            if (enemy.health <= 0) {
                 window.alert(enemy.name + ' has died!');
 
                 // award player money for winning
@@ -100,6 +101,10 @@ var startGame = function() {
     playerInfo.reset();
 
     for (var i = 0; i < enemyInfo.length; i++) {
+        // check player stats
+        console.log(playerInfo);
+
+        // if player is still alive, keep fighting
         if (playerInfo.health > 0) {
             // let player know what round they are in
             window.alert("Welcome to Robot Gladiators! Round " + ( i + 1 ));
@@ -107,9 +112,6 @@ var startGame = function() {
             var pickedEnemyObj = enemyInfo[i];
             // reset enemyHealth before starting new fight
             pickedEnemyObj.health = randomNumber(40, 60);
-            // use debugger to pause script from running and check what's going on
-            // debugger;
-
             // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
             fight(pickedEnemyObj);
 
@@ -136,12 +138,23 @@ var startGame = function() {
 
 // endGame() function
 var endGame = function() {
-    // if player is still alive, player wins!
-    if (playerInfo.health > 0) {
-        window.alert("Great job, you've survived the game! You how have a score of " + playerInfo.money + ".");
+    window.alert("The game has now ended. Let's see how you did!");
+
+    // check localStorage for high score, if it's not there, use 0
+    var highScore = localStorage.getItem("highscore");
+    if (highScore === null) {
+        highScore = 0;
+    }
+    
+    // if player has more money than the high score, player has new high score
+    if (playerInfo.money > highScore) {
+        localStorage.setItem("highscore", playerInfo.money);
+        localStorage.setItem("name", playerInfo.name);
+
+        alert(playerInfo.name + " now has the high score of " + playerInfo.money + "!");
     }
     else {
-        window.alert("You've lost your robot in battle.");
+        alert(playerInfo.name + " did not beat the high score of " + highScore + ". Maybe next time!");
     }
 
     //ask player if they'd like to play again
@@ -154,7 +167,7 @@ var endGame = function() {
     else {
         window.alert("Thank you for playing Robot Gladiators! Come back soon!");
     }
-}
+};
 
 // shop function
 var shop = function() {
@@ -191,6 +204,7 @@ var getPlayerName = function() {
         name = prompt("What is your robot's name?");
     }
     console.log("Your robot's name is " + name);
+    return name;
 };
 
 var playerInfo = {

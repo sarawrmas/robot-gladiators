@@ -3,6 +3,11 @@ body {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: darkgreen;
+}
+
 button {
   padding: 10px;
   background-color: chartreuse;
@@ -16,13 +21,13 @@ input {
   width: 300px;
 }
 
-#header {
+.header {
   color: darkblue;
   font-size: 50px;
-  -webkit-animation: colorchange 20s infinite alternate;
+  animation: colorchange 20s infinite alternate;
 }
 
-@-webkit-keyframes colorchange {
+@keyframes colorchange {
   0% {
     color:darkcyan;
   }

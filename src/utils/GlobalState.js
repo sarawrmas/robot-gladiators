@@ -1,11 +1,11 @@
 import React, { createContext, useContext } from "react";
-import { useProductReducer } from "./reducers";
+import { usePlayerReducer } from "./reducers";
 
-const StoreContext = createContext();
-const { Provider } = StoreContext;
+const PlayerContext = createContext();
+const { Provider } = PlayerContext;
 
-const StoreProvider = () => {
-  const [state, dispatch] = useProductReducer({
+const PlayerProvider = ({ ...props }) => {
+  const [state, dispatch] = usePlayerReducer({
     playerName: '',
     playerHealth: 100,
     playerAttack: 10,
@@ -14,8 +14,8 @@ const StoreProvider = () => {
   return <Provider value={[state, dispatch]} {...props} />
 };
 
-const useStoreContext = () => {
-  return useContext(StoreContext);
+const usePlayerContext = () => {
+  return useContext(PlayerContext);
 };
 
-export { StoreProvider, useStoreContext };
+export { PlayerProvider, usePlayerContext };

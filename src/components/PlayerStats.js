@@ -1,13 +1,17 @@
 import React from 'react';
+import { usePlayerContext } from '../utils/GlobalState';
 
-const PlayerStats = (props) => {
-  const { playerInfo, setPlayerInfo } = props
+const PlayerStats = () => {
+  const [state] = usePlayerContext();
+
+  console.log(state)
+  
   return (
     <div>
-      <h3 id="playerName">{playerInfo.name}</h3>
-      <p id="playerHealth">Health: {playerInfo.health}</p>
-      <p id="playerAttack">Attack: {playerInfo.attack}</p>
-      <p id="playerTokens">Tokens: {playerInfo.tokens}</p>
+      <h3>{state.playerName}</h3>
+      <p>Health: {state.playerHealth}</p>
+      <p>Attack: {state.playerAttack}</p>
+      <p>Tokens: {state.playerTokens}</p>
     </div>
   )
 }

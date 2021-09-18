@@ -4,7 +4,7 @@ import { PlayerProvider } from './utils/GlobalState';
 import NameRobot from './pages/NameRobot';
 import FightOrSkip from './components/FightOrSkip';
 import PlayerStats from './components/PlayerStats';
-// import Fight from './pages/Fight';
+import Fight from './pages/Fight';
 import Skip from './pages/Skip';
 
 function App() {
@@ -15,13 +15,17 @@ function App() {
           <Router>
             <div>
             <PlayerProvider>
-            <PlayerStats />
-            <Switch>
-            <Route exact path="/" component = {NameRobot} />
-              <Route exact path="/fight-or-skip" component = {FightOrSkip} />
-              {/* <Route exact path="/fight" component = {Fight} /> */}
-              <Route exact path="/skip" component = {Skip} />
-            </Switch>
+              <Switch>
+              <Route exact path="/" component = {NameRobot} />
+              <Route>
+              <PlayerStats />
+              <Switch>
+                <Route exact path="/fight-or-skip" component = {FightOrSkip} />
+                <Route exact path="/fight" component = {Fight} />
+                <Route exact path="/skip" component = {Skip} />
+              </Switch>
+              </Route>
+              </Switch>
             </PlayerProvider>
             </div>
             

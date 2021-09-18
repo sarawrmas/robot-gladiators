@@ -11,9 +11,10 @@ const PlayerProvider = ({ ...props }) => {
     playerHealth: 100,
     playerAttack: 10,
     playerTokens: 10,
-    robortoHealth: randomNumber(40, 60),
-    amyHealth: randomNumber(40, 60),
-    trumbleHealth: randomNumber(40, 60)
+    currentEnemy: 'Robo Trumble',
+    // robortoHealth: randomNumber(40, 60),
+    // amyHealth: randomNumber(40, 60),
+    // trumbleHealth: randomNumber(40, 60)
   });
   return <Provider value={[state, dispatch]} {...props} />
 };

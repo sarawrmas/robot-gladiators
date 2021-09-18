@@ -1,19 +1,35 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { usePlayerContext } from '../utils/GlobalState';
 
 const PlayerStats = () => {
   const [state] = usePlayerContext();
-
-  console.log(state)
   
   return (
     <div>
-      <div className="playerStats">
-        <h3>{state.playerName}</h3>
-        <p>Health: {state.playerHealth}</p>
-        <p>Attack: {state.playerAttack}</p>
-        <p>Tokens: {state.playerTokens}</p>
-      </div>
+      <h2>ROUND 1</h2>
+      <Container>
+        <Row>
+          <Col>
+            <div className="playerStats">
+              <h3>{state.playerName}</h3>
+              <img src="images/player1.png" />
+              <p>Health: {state.playerHealth}</p>
+              <p>Attack: {state.playerAttack}</p>
+              <p>Tokens: {state.playerTokens}</p>
+            </div>
+          </Col>
+          <Col>
+            <h3>VS.</h3>
+          </Col>
+          <Col>
+            <h3>Roborto</h3>
+            <img src ="images/roborto.png" />
+            <p>Health: 50</p>
+            <p>Attack: 12</p>
+          </Col>
+        </Row>
+      </Container>
       {/* <div className="robortoStats">
         <h3>Roborto</h3>
         <p>Health: {state.robortoHealth}</p>

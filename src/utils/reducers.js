@@ -5,9 +5,10 @@ import {
   UPDATE_PLAYER_HEALTH,
   UPDATE_PLAYER_ATTACK,
   UPDATE_PLAYER_TOKENS,
-  UPDATE_ROBORTO_HEALTH,
-  UPDATE_AMY_HEALTH,
-  UPDATE_TRUMBLE_HEALTH
+  UPDATE_CURRENT_ENEMY
+  // UPDATE_ROBORTO_HEALTH,
+  // UPDATE_AMY_HEALTH,
+  // UPDATE_TRUMBLE_HEALTH
 } from './actions';
 
 export const reducer = (state, action) => {
@@ -36,23 +37,29 @@ export const reducer = (state, action) => {
         playerTokens: action.playerTokens
       };
     
-    case UPDATE_ROBORTO_HEALTH:
+    case UPDATE_CURRENT_ENEMY:
       return {
         ...state,
-        robortoHealth: action.robortoHealth
-      };
+        currentEnemy: action.currentEnemy
+      }
     
-    case UPDATE_AMY_HEALTH:
-      return {
-        ...state,
-        amyHealth: action.amyHealth
-      };
+    // case UPDATE_ROBORTO_HEALTH:
+    //   return {
+    //     ...state,
+    //     robortoHealth: action.robortoHealth
+    //   };
     
-    case UPDATE_TRUMBLE_HEALTH:
-      return {
-        ...state,
-        trumbleHealth: action.trumbleHealth
-      };
+    // case UPDATE_AMY_HEALTH:
+    //   return {
+    //     ...state,
+    //     amyHealth: action.amyHealth
+    //   };
+    
+    // case UPDATE_TRUMBLE_HEALTH:
+    //   return {
+    //     ...state,
+    //     trumbleHealth: action.trumbleHealth
+    //   };
 
     default:
       return state;

@@ -6,32 +6,33 @@ import FightOrSkip from './components/FightOrSkip';
 import PlayerStats from './components/PlayerStats';
 import Fight from './pages/Fight';
 import Skip from './pages/Skip';
+import QuitGame from './components/QuitGame';
+import Welcome from './pages/Welcome';
 
 function App() {
   return (
-
-      <div>
-        <h1 className="header">Robot Gladiators</h1>
-          <Router>
-            <div>
-            <PlayerProvider>
-              <Switch>
-              <Route exact path="/" component = {NameRobot} />
+    <div>
+      <h1 className="header">Robot Gladiators</h1>
+        <Router>
+          <div>
+          <PlayerProvider>
+            <Switch>
+              <Route exact path="/" component={Welcome} />
+              <Route exact path="/name" component = {NameRobot} />
               <Route>
-              <PlayerStats />
-              <Switch>
-                <Route exact path="/fight-or-skip" component = {FightOrSkip} />
-                <Route exact path="/fight" component = {Fight} />
-                <Route exact path="/skip" component = {Skip} />
-              </Switch>
+                <QuitGame />
+                <PlayerStats />
+                <Switch>
+                  <Route exact path="/fight-or-skip" component = {FightOrSkip} />
+                  <Route exact path="/fight" component = {Fight} />
+                  <Route exact path="/skip" component = {Skip} />
+                </Switch>
               </Route>
-              </Switch>
-            </PlayerProvider>
-            </div>
-            
-          </Router>
-      </div>
-
+            </Switch>
+          </PlayerProvider>
+          </div>
+        </Router>
+    </div>
   );
 }
 

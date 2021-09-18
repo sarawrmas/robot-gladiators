@@ -14,13 +14,9 @@ const FightOrSkip = () => {
   }
 
   const skipMatch = () => {
-    // if (state.playerTokens >= 10) {
-      dispatch({type: UPDATE_PLAYER_TOKENS, playerTokens: state.playerTokens - 10})
-      setShowModal(false)
-      history.push('/skip')
-    // } else {
-    //   alert("You do not have enough tokens!")
-    // }
+    dispatch({type: UPDATE_PLAYER_TOKENS, playerTokens: state.playerTokens - 10})
+    setShowModal(false)
+    history.push('/skip')
   }
 
   const selectSkip = () => {

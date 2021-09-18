@@ -1,15 +1,13 @@
 import { useReducer } from 'react';
 
-// export const UPDATE_PLAYER_NAME = "UPDATE_PLAYER_NAME";
-// export const UPDATE_PLAYER_HEALTH = "UPDATE_PLAYER_HEALTH";
-// export const UPDATE_PLAYER_ATTACK = "UPDATE_PLAYER_ATTACK";
-// export const UPDATE_PLAYER_TOKENS = "UPDATE_PLAYER_TOKENS";
-
 import {
   UPDATE_PLAYER_NAME,
   UPDATE_PLAYER_HEALTH,
   UPDATE_PLAYER_ATTACK,
-  UPDATE_PLAYER_TOKENS
+  UPDATE_PLAYER_TOKENS,
+  UPDATE_ROBORTO_HEALTH,
+  UPDATE_AMY_HEALTH,
+  UPDATE_TRUMBLE_HEALTH
 } from './actions';
 
 export const reducer = (state, action) => {
@@ -37,18 +35,29 @@ export const reducer = (state, action) => {
         ...state,
         playerTokens: action.playerTokens
       };
+    
+    case UPDATE_ROBORTO_HEALTH:
+      return {
+        ...state,
+        robortoHealth: action.robortoHealth
+      };
+    
+    case UPDATE_AMY_HEALTH:
+      return {
+        ...state,
+        amyHealth: action.amyHealth
+      };
+    
+    case UPDATE_TRUMBLE_HEALTH:
+      return {
+        ...state,
+        trumbleHealth: action.trumbleHealth
+      };
 
     default:
       return state;
   }
 };
-
-// export const initialState = {
-//   playerName: '',
-//   playerHealth: 100,
-//   playerAttack: 10,
-//   playerTokens: 10
-// }
 
 export function usePlayerReducer(initialState) {
   return useReducer(reducer, initialState);

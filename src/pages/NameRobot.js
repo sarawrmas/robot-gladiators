@@ -6,7 +6,7 @@ import { UPDATE_PLAYER_NAME } from '../utils/actions';
 const NameRobot = () => {
   const history = useHistory();
   const [formInput, setFormInput] = useState('');
-  const [dispatch] = usePlayerContext();
+  const [state, dispatch] = usePlayerContext();
 
   const namePlayer = (e) => {
     e.preventDefault();

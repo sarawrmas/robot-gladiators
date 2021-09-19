@@ -10,7 +10,7 @@ const Welcome = () => {
 
   return (
   <div>
-    <h1>Welcome!</h1>
+    <h1 className="header"> Welcome</h1>
     <img src="images/player1.png" />
     <p>Loading...</p>
   </div>

@@ -1,20 +1,19 @@
 body {
   font-family: monospace;
   text-align: center;
+  color: forestgreen;
 }
 
-a {
-  text-decoration: none;
-  color: darkgreen;
+body * {
+  margin: 20px;
 }
 
 button {
   padding: 10px;
   background-color: chartreuse;
-  color: darkgreen;
+  color: forestgreen;
   font-family: monospace;
   font-weight: bolder;
-  margin: 20px;
 }
 
 input {
@@ -24,10 +23,9 @@ input {
 
 h2 {
   font-size: 40px;
-  margin: 20px auto;
-  background-color: darkgreen;
-  width: 80%;
-  color: white;
+  /* background-color: darkgreen; */
+  /* width: 80%; */
+  /* color: chartreuse; */
 }
 
 h3 {
@@ -36,6 +34,12 @@ h3 {
 
 img {
   height: 20vw;
+}
+
+#quit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .header {

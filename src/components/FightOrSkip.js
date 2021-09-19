@@ -4,6 +4,7 @@ import { Modal } from 'react-bootstrap';
 import { usePlayerContext } from '../utils/GlobalState';
 import { UPDATE_PLAYER_TOKENS } from '../utils/actions';
 
+
 const FightOrSkip = () => {
   const history = useHistory();
   const [showModal, setShowModal] = useState(false);
@@ -30,7 +31,7 @@ const FightOrSkip = () => {
 
   return (
     <div id="fight-or-skip">
-      <h2>Would you like to FIGHT or SKIP this battle?</h2>
+      {/* <h2>Would you like to FIGHT or SKIP this battle?</h2> */}
       <button onClick={fightMatch}>FIGHT</button>
       <button onClick={selectSkip}>SKIP</button>
       <Modal show={showModal}>

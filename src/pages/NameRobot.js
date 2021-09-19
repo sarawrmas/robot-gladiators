@@ -16,7 +16,8 @@ const NameRobot = () => {
     } else {
       dispatch({type: UPDATE_PLAYER_NAME, playerName: formInput})
       setFormInput('');
-      history.push('/fight-or-skip')
+      // history.push('/fight-or-skip')
+      history.push('/fight')
     }
   }
 

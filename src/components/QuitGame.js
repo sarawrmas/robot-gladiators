@@ -27,7 +27,7 @@ const QuitGame = () => {
 
   return (
       <div>
-      <button onClick={selectQuit}>Quit</button>
+      <button id="quit-btn" onClick={selectQuit}>Quit</button>
       <Modal show={showModal}>
       <Modal.Body>
         <p>Are you sure you'd like to quit?</p>

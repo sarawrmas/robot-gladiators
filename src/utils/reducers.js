@@ -8,9 +8,6 @@ import {
   UPDATE_CURRENT_ENEMY,
   UPDATE_ENEMY_HEALTH,
   RESET_STATE
-  // UPDATE_ROBORTO_HEALTH,
-  // UPDATE_AMY_HEALTH,
-  // UPDATE_TRUMBLE_HEALTH
 } from './actions';
 
 export const initialState = {
@@ -18,7 +15,7 @@ export const initialState = {
   playerHealth: 100,
   playerAttack: 10,
   playerTokens: 10,
-  currentEnemy: 'Roborto',
+  enemyName: 'Roborto',
   enemyHealth: 50,
   enemyAttack: 12
 }
@@ -52,13 +49,15 @@ export const reducer = (state, action) => {
     case UPDATE_CURRENT_ENEMY:
       return {
         ...state,
-        currentEnemy: action.currentEnemy
+        enemyName: action.enemyName,
+        enemyHealth: 50,
+        enemyAttack: 12
       };
 
     case UPDATE_ENEMY_HEALTH:
       return {
         ...state,
-        currentEnemy: state.currentEnemy,
+        enemyName: state.enemyName,
         enemyHealth: action.enemyHealth
       }
 
@@ -68,28 +67,10 @@ export const reducer = (state, action) => {
         playerHealth: 100,
         playerAttack: 10,
         playerTokens: 10,
-        currentEnemy: 'Roborto',
+        enemyName: 'Roborto',
         enemyHealth: 50,
         enemyAttack: 12
       }
-    
-    // case UPDATE_ROBORTO_HEALTH:
-    //   return {
-    //     ...state,
-    //     robortoHealth: action.robortoHealth
-    //   };
-    
-    // case UPDATE_AMY_HEALTH:
-    //   return {
-    //     ...state,
-    //     amyHealth: action.amyHealth
-    //   };
-    
-    // case UPDATE_TRUMBLE_HEALTH:
-    //   return {
-    //     ...state,
-    //     trumbleHealth: action.trumbleHealth
-    //   };
 
     default:
       return state;

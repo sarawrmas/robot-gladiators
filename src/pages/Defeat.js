@@ -3,7 +3,7 @@ import { usePlayerContext } from '../utils/GlobalState';
 import { Link } from 'react-router-dom';
 
 const Defeat = () => {
-  const [state] = usePlayerContext();
+  const [state, dispatch] = usePlayerContext();
 
   return (
     <div>

@@ -10,9 +10,20 @@ const Fight = () => {
   const [state, dispatch] = usePlayerContext();
   const history = useHistory();
 
+  const fight = () => {
+    if (state.playerHealth > 0 && state.enemyHealth > 0) {
+      console.log("FIGHT")
+    } else if (state.enemyHealth <= 0 && state.enemyName !== "Cyberion") {
+      updateEnemy();
+      history.push("/defeat")
+    } else {
+      history.push("/endgame")
+    }
+  }
+
   useEffect(() => {
     fight()
-  }, [])
+  })
 
   const enemies = [
     {
@@ -35,17 +46,6 @@ const Fight = () => {
     dispatch({
       type: UPDATE_CURRENT_ENEMY, enemyName: enemies[currentEnemyIndex + 1]
     })
-  }
-
-  const fight = () => {
-    if (state.playerHealth > 0 && state.enemyHealth > 0) {
-      console.log("FIGHT")
-    } else if (state.enemyHealth <= 0 && state.enemyName !== "Cyberion") {
-      updateEnemy();
-      history.push("/defeat")
-    } else {
-      history.push("/endgame")
-    }
   }
 
   return (

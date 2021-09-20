@@ -5,7 +5,7 @@ import { usePlayerContext } from '../utils/GlobalState';
 import ShopModal from '../components/ShopModal';
 
 const Shop = () => {
-  const [state] = usePlayerContext();
+  const [state, dispatch] = usePlayerContext();
   const [showModal, setShowModal] = useState(false);
   const [upgradeChoice, setUpgradeChoice] = useState('');
 

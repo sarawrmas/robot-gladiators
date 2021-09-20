@@ -26,7 +26,7 @@ const FightOrSkip = () => {
 
   const fightMatch = () => {
     setShowModal(false)
-    history.push('/fight')
+    history.push('/attack')
   }
 
   return (

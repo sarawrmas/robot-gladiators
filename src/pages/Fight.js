@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { usePlayerContext } from '../utils/GlobalState';
-import { UPDATE_CURRENT_ENEMY, UPDATE_PLAYER_HEALTH } from '../utils/actions';
+import { UPDATE_CURRENT_ENEMY } from '../utils/actions';
 import { useHistory } from 'react-router-dom';
 import FightOrSkip from '../components/FightOrSkip';
 import PlayerStats from '../components/PlayerStats';
@@ -8,9 +8,6 @@ import PlayerStats from '../components/PlayerStats';
 const Fight = () => {
   const [state, dispatch] = usePlayerContext();
   const history = useHistory();
-  // const [roundNum, setRoundNum] = useState(1);
-
-  console.log(state)
 
   useEffect(() => {
     fight()
@@ -19,35 +16,33 @@ const Fight = () => {
   const enemies = [
     {
       name: "Roborto",
-      img: "roborto.png",
-      attacked: "roborto-attacked.png",
-      dead: "roborto-dead.png"
+      img: 'images/roborto.png'
     },
     {
-      name: "Amy Android",
-      img: "amy.png",
-      attacked: "amy-attacked.png",
-      dead: "amy-dead.png"
+      name: "Androida",
+      img: "images/androida.png"
     },
     {
-      name: "Robo Trumble",
-      img: "trumble.png",
-      attacked: "trumble-attacked.png",
-      dead: "trumble-dead.png"
+      name: "Cyberion",
+      img: "images/cyberion.png"
     }
-  ]
+  ];
+
+  var currentEnemyIndex = enemies.findIndex(enemy => enemy.name === state.enemyName)
+
+  const updateEnemy = () => {
+    dispatch({
+      type: UPDATE_CURRENT_ENEMY, enemyName: enemies[currentEnemyIndex + 1]
+    })
+  }
 
   const fight = () => {
-    if (state.enemyHealth <= 0) {
-      // dispatch({
-      //   type: UPDATE_CURRENT_ENEMY, enemyName: enemies[1]
-      // })
-
-      setTimeout(() => {
-        history.push("/shop")
-      }, 5000)
-      
-    } else if (state.playerHealth <= 0) {
+    if (state.playerHealth > 0 && state.enemyHealth > 0) {
+      console.log("FIGHT")
+    } else if (state.enemyHealth <= 0 && state.enemyName !== "Cyberion") {
+      updateEnemy();
+      history.push("/shop")
+    } else {
       setTimeout(() => {
         history.push("/endgame")
       }, 5000)
@@ -58,7 +53,7 @@ const Fight = () => {
     <div>
       {state.playerHealth > 0 && state.enemyHealth > 0 ? (
         <div>
-          <PlayerStats />
+          <PlayerStats enemies={enemies} currentEnemyIndex={currentEnemyIndex} />
           <FightOrSkip />
         </div>
       ) : (

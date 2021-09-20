@@ -42,10 +42,19 @@ img {
   right: 0;
 }
 
+.pow {
+  height: 10vw;
+}
+
+.danger {
+  color: red;
+}
+
 .header {
   color: darkblue;
   font-size: 50px;
   animation: colorchange 20s infinite alternate;
+  margin-bottom: 80px;
 }
 
 @keyframes colorchange {

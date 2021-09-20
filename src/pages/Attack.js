@@ -25,8 +25,6 @@ const Attack = () => {
     setTimeout(() => {
       if (state.enemyHealth > 0) {
         history.push('/fight')
-      } else {
-        history.push('/shop')
       }
     }, 3000)
   }
@@ -41,7 +39,6 @@ const Attack = () => {
 
   return (
     <div>
-      {/* <PlayerStats /> */}
       {playerTurn ? (
         <div>
           <h2>{state.playerName} has attacked {state.enemyName}!</h2>
@@ -61,6 +58,7 @@ const Attack = () => {
           </Container>
         </div>
       ) : (
+        !playerTurn ? (
         <div>
           <h2>{state.enemyName} has attacked {state.playerName}!</h2>
           <Container>
@@ -78,6 +76,11 @@ const Attack = () => {
             </Row>
           </Container>
         </div>
+        ) : state.enemyHealth <= 0 ? (
+          <div>Boohoo</div>
+        ) : (
+          <div>Error</div>
+        )
       )}
     </div>
   )

@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Container, Row, Col, Popover, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { usePlayerContext } from '../utils/GlobalState';
-import { UPDATE_CURRENT_ENEMY } from '../utils/actions';
 import ShopModal from '../components/ShopModal';
 
 const Shop = () => {
-  const history = useHistory();
-  const [state, dispatch] = usePlayerContext();
+  const [state] = usePlayerContext();
   const [showModal, setShowModal] = useState(false);
   const [upgradeChoice, setUpgradeChoice] = useState('');
 
   const openModal = (choice) => {
     setShowModal(true)
     setUpgradeChoice(choice)
-  }
-
-  const returnToGame = () => {
-    history.push('/fight');
   }
 
   return (
@@ -63,7 +57,7 @@ const Shop = () => {
         </Row>
       </Container>
       <ShopModal showModal={showModal} setShowModal={setShowModal} upgradeChoice={upgradeChoice} />
-      <button onClick={returnToGame}>Return to Game</button>
+      <Link to="/fight"><button>Return to Game</button></Link>
     </div>
   )
 };

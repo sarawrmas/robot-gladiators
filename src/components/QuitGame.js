@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import { usePlayerContext } from '../utils/GlobalState';
 import { RESET_STATE } from '../utils/actions';
+import { Link } from 'react-router-dom';
 
 const QuitGame = () => {
   const [state, dispatch] = usePlayerContext();
-  const history = useHistory();
   const [showModal, setShowModal] = useState(false);
 
   const selectQuit = () => {
@@ -22,7 +21,6 @@ const QuitGame = () => {
       type: RESET_STATE
     })
     setShowModal(false)
-    history.push('/name')
   }
 
   return (
@@ -35,7 +33,7 @@ const QuitGame = () => {
       </Modal.Body>
       <Modal.Footer>
         <button onClick={continueGame}>Return to Game</button>
-        <button onClick={confirmQuit}>Confirm Quit</button>
+        <Link to="/"><button onClick={confirmQuit}>Confirm Quit</button></Link>
       </Modal.Footer>
       </Modal>
     </div>

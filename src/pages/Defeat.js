@@ -1,9 +1,17 @@
 import React from 'react';
+import { usePlayerContext } from '../utils/GlobalState';
+import { Link } from 'react-router-dom';
 
 const Defeat = () => {
-  return div (
+  const [state] = usePlayerContext();
+
+  return (
     <div>
-      <h1>Player has died!</h1>
+      <h1>{state.enemyName} has died!</h1>
+      <img src={`images/${state.enemyName.toLowerCase()}-dead.png`} />
+      <h2>Would you like to...</h2>
+      <Link to="/shop"><button>Visit Shop</button></Link>
+      <Link to="/fight"><button>Return to Game</button></Link>
     </div>
   )
 }

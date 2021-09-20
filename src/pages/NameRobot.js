@@ -16,13 +16,13 @@ const NameRobot = () => {
     } else {
       dispatch({type: UPDATE_PLAYER_NAME, playerName: formInput})
       setFormInput('');
-      // history.push('/fight-or-skip')
       history.push('/fight')
     }
   }
 
   return (
     <div id="name-div">
+      <img src="images/player1.png" /><br />
       <h2>What is your player's name?</h2>
       <input id="name-input" value={formInput} onChange={(e) => setFormInput(e.target.value)} />
       <button id="name-btn" onClick={namePlayer}>SUBMIT</button>

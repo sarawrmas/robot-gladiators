@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import { usePlayerContext } from '../utils/GlobalState';
 import { UPDATE_PLAYER_TOKENS } from '../utils/actions';
-
+import { Link } from 'react-router-dom';
 
 const FightOrSkip = () => {
-  const history = useHistory();
   const [showModal, setShowModal] = useState(false);
   const [state, dispatch] = usePlayerContext();
 
@@ -17,7 +15,6 @@ const FightOrSkip = () => {
   const skipMatch = () => {
     dispatch({type: UPDATE_PLAYER_TOKENS, playerTokens: state.playerTokens - 10})
     setShowModal(false)
-    history.push('/skip')
   }
 
   const selectSkip = () => {
@@ -26,13 +23,12 @@ const FightOrSkip = () => {
 
   const fightMatch = () => {
     setShowModal(false)
-    history.push('/attack')
   }
 
   return (
     <div id="fight-or-skip">
       {/* <h2>Would you like to FIGHT or SKIP this battle?</h2> */}
-      <button onClick={fightMatch}>FIGHT</button>
+      <Link to="/attack"><button onClick={fightMatch}>FIGHT</button></Link>
       <button onClick={selectSkip}>SKIP</button>
       <Modal show={showModal}>
         {state.playerTokens >= 10 ? (
@@ -42,7 +38,7 @@ const FightOrSkip = () => {
               <p>Skipping forfeits the match and deducts 10 tokens!</p>
             </Modal.Body>
             <Modal.Footer>
-              <button onClick={skipMatch}>CONTINUE SKIP</button>
+              <Link to="/skip"><button onClick={skipMatch}>CONTINUE SKIP</button></Link>
               <button onClick={continueMatch}>RETURN TO MATCH</button>
             </Modal.Footer>
           </div>

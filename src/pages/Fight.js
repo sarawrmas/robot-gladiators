@@ -4,6 +4,7 @@ import { UPDATE_CURRENT_ENEMY } from '../utils/actions';
 import { useHistory } from 'react-router-dom';
 import FightOrSkip from '../components/FightOrSkip';
 import PlayerStats from '../components/PlayerStats';
+import { Link } from 'react-router-dom';
 
 const Fight = () => {
   const [state, dispatch] = usePlayerContext();
@@ -41,11 +42,9 @@ const Fight = () => {
       console.log("FIGHT")
     } else if (state.enemyHealth <= 0 && state.enemyName !== "Cyberion") {
       updateEnemy();
-      history.push("/shop")
+      history.push("/defeat")
     } else {
-      setTimeout(() => {
-        history.push("/endgame")
-      }, 5000)
+      history.push("/endgame")
     }
   }
 
@@ -70,7 +69,8 @@ const Fight = () => {
             </div>
           ) : (
             <div>
-              <h2>How did I get here?</h2>
+              <h2>Error...</h2>
+              <Link to="/"><button>Home</button></Link>
             </div>
           )
         )

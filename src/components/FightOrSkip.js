@@ -36,20 +36,16 @@ const FightOrSkip = () => {
             <Modal.Body>
               <p>Are you sure you want to skip?</p>
               <p>Skipping forfeits the match and deducts 10 tokens!</p>
+              <Link to="/skip"><button onClick={skipMatch}>CONFIRM SKIP</button></Link>
+              <button onClick={continueMatch}>CANCEL</button>
             </Modal.Body>
-            <Modal.Footer>
-              <Link to="/skip"><button onClick={skipMatch}>CONTINUE SKIP</button></Link>
-              <button onClick={continueMatch}>RETURN TO MATCH</button>
-            </Modal.Footer>
           </div>
         ) : (
           <div>
             <Modal.Body>
               <p>You do not have enough tokens!</p>
+              <button onClick={continueMatch}>CANCEL</button>
             </Modal.Body>
-            <Modal.Footer>
-              <button onClick={continueMatch}>RETURN TO MATCH</button>
-            </Modal.Footer>
           </div>
         )}
       </Modal>

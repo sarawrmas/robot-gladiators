@@ -45,13 +45,13 @@ const Attack = () => {
           <Container>
             <Row>
               <Col>
-                <img src="../images/player1.png" />
+                <img src="../images/player1.png" alt="" />
               </Col>
               <Col>
-                <img className="pow" src="../images/player-attack-pow.png" />
+                <img className="pow" src="../images/player-attack-pow.png" alt="" />
               </Col>
               <Col>
-                <img src={`../images/${state.enemyName.toLowerCase()}-attacked.png`} />
+                <img src={`../images/${state.enemyName.toLowerCase()}-attacked.png`} alt="" />
                 <h3 className="danger">{state.playerAttack} Damage!</h3>
               </Col>
             </Row>
@@ -64,14 +64,14 @@ const Attack = () => {
           <Container>
             <Row>
               <Col>
-                <img src="../images/player1attacked.png" />
+                <img src="../images/player1attacked.png" alt="" />
                 <h3 className="danger">{state.enemyAttack} Damage!</h3>
               </Col>
               <Col>
-                <img className="pow" src="../images/enemy-attack-pow.png" />
+                <img className="pow" src="../images/enemy-attack-pow.png" alt="" />
               </Col>
               <Col>
-                <img src={`../images/${state.enemyName.toLowerCase()}.png`} />
+                <img src={`../images/${state.enemyName.toLowerCase()}.png`} alt="" />
               </Col>
             </Row>
           </Container>

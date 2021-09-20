@@ -43,20 +43,16 @@ const ShopModal = (props) => {
           <div>
             <Modal.Body>
               <p>Upgrade {upgradeChoice.toLowerCase()} for 7 tokens?</p>
-            </Modal.Body>
-            <Modal.Footer>
               <button onClick={upgrade}>Upgrade</button>
               <button onClick={closeModal}>Close</button>
-            </Modal.Footer>
+            </Modal.Body>
           </div>
         ) : (
           <div>
             <Modal.Body>
               <p>You don't have enough tokens!</p>
-            </Modal.Body>
-            <Modal.Footer>
               <button onClick={closeModal}>Close</button>
-            </Modal.Footer>
+            </Modal.Body>
           </div>
         )}
       </Modal>

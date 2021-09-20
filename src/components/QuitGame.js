@@ -30,11 +30,9 @@ const QuitGame = () => {
       <Modal.Body>
         <p>Are you sure you'd like to quit?</p>
         <p>You will forfeit the entire game and lose all progress!</p>
-      </Modal.Body>
-      <Modal.Footer>
         <button onClick={continueGame}>Return to Game</button>
         <Link to="/"><button onClick={confirmQuit}>Confirm Quit</button></Link>
-      </Modal.Footer>
+      </Modal.Body>
       </Modal>
     </div>
   )

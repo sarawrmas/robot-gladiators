@@ -22,7 +22,7 @@ const NameRobot = () => {
 
   return (
     <div id="name-div">
-      <img src="images/player1.png" /><br />
+      <img src="images/player1.png" alt="" /><br />
       <h2>What is your player's name?</h2>
       <input id="name-input" value={formInput} onChange={(e) => setFormInput(e.target.value)} />
       <button id="name-btn" onClick={namePlayer}>SUBMIT</button>

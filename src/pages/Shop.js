@@ -34,7 +34,12 @@ const Shop = () => {
               </Tooltip>
             }>
               <div>
-                <img className="pow" src="../images/upgrade-health.png" onClick={() => openModal("Health")} />
+                <img
+                  className="pow"
+                  src="../images/upgrade-health.png"
+                  alt="A red plus sign that opens upgrade health modal"
+                  onClick={() => openModal("Health")}
+                />
               </div>
             </OverlayTrigger>
           </Col>
@@ -50,7 +55,12 @@ const Shop = () => {
               </Tooltip>
             }>
               <div>
-                <img className="pow" src="../images/upgrade-attack.png" onClick={() => openModal("Attack")}/>
+                <img
+                  className="pow"
+                  src="../images/upgrade-attack.png"
+                  alt="A cartoon pow shape that opens upgrade attack modal"
+                  onClick={() => openModal("Attack")}
+                />
               </div>
             </OverlayTrigger>
           </Col>

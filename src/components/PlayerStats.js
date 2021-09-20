@@ -21,7 +21,7 @@ const PlayerStats = (props) => {
           <Col>
             <div>
               <h3>{state.playerName}</h3>
-              <img src="images/player1.png" />
+              <img src="images/player1.png" alt="" />
               <p>Health: {state.playerHealth}</p>
               <p>Attack: {state.playerAttack}</p>
               <p>Tokens: {state.playerTokens}</p>
@@ -34,7 +34,7 @@ const PlayerStats = (props) => {
             {printEnemyInfo().map((enemy) => (
               <div key={enemies.indexOf(enemy)}>
                 <h3>{enemy.name}</h3>
-                <img src={enemy.img} />
+                <img src={enemy.img} alt="" />
               </div>
             ))}
             <p>Health: {state.enemyHealth}</p>

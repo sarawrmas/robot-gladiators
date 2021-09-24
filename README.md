@@ -2,33 +2,42 @@
 
 ## Table of Contents
 * [Deployed](#deployed)
-* [Technologies](#technologies)
 * [Description](#description)
+* [Technologies](#technologies)
+* [Usage](#usage)
 * [Preview](#preview)
 * [Questions](#questions)
 * [Credits](#credits)
 
 ## Deployed
-Access the website [here](https://sarawrmas.github.io/robot-gladiators/)
-
-## Technologies
-* JavaScript
+Access the application [here](https://sarawrmas.github.io/robot-gladiators/)
 
 ## Description
-Robot Gladiators is a simple RPG created with JavaScript. To use, follow the prompts. First you will name your robot gladiator. Then the fun begins.
+Robot Gladiators is a RPG originally created with a series of JavaScript prompts. To use it in its current state, open the application and follow the prompts to name your fighter and take on 3 robot enemies.
 
-Your gladiator will fight 3 battles with 3 enemies, Roborto, Amy Android, and Robo Trumble. For each turn, you can choose to fight or skip.
+Robot Gladiators is currently undergoing maintenance to become a fully functional graphic game built with React! Check back soon for updates.
 
-If you fight, you cause damage to the enemy robot and their health will decrease. They will attack back and decrease your health with their damage. The round continues until one robot gladiator runs out of health.
+## Technologies
+* React
+* JavaScript
+* Bootstrap
+
+## Usage
+To begin, name your fighter.
+
+Your gladiator will fight 3 battles with 3 enemies, Roborto, Androida, and Cyberion. For each turn, you can choose to fight or skip.
+
+If you choose to fight, your robot will attack the enemy robot and their health will decrease. They will attack back and decrease your health. The round continues until one robot gladiator runs out of health, or if you choose to skip.
 
 If you skip, 10 coins will be deducted from your balance and you will move on to the next round.
 
-If you win the round, you will earn coins that can be used at the store between rounds to refill your health by 20 points or upgrade your attack by 6 points. If you skip a battle, no coins will be rewarded and you will skip to the next round with your original health and attack power.
+If you win the round, you will earn coins that can be used at the store between rounds to refill your health by 20 points or upgrade your attack by 6 points.
 
-Can you reach the end and emerge victorious?
+At the end of game, should you emerge victorious, you can enter your score into the database and see how did compared to other players. If your health runs out before you reach the final enemy, your gladiator will die and the game will restart.
 
 ## Preview
-Screenshot goes here
+![Start screen showing player 1 vs. enemy Roborto](public/images/screenshot1.png)
+![Player attacking enemy Roborto](public/images/screenshot2.png)
 
 ## Questions
 Have questions about this project?  
@@ -36,5 +45,4 @@ GitHub: https://github.com/sarawrmas
 Email: sara.m.adamski@gmail.com
 
 ## Credits
-Sara Adamski  
-Icons from flaticon.com
+Sara Adamski
